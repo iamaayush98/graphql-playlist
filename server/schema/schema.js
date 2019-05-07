@@ -25,7 +25,7 @@ var authors = [
     { name: 'Brandon Sanderson', age: 42, id: '2' },
     { name: 'Terry Pratchett', age: 66, id: '3' }
 ];
-
+//metadata for array data
 const BookType = new GraphQLObjectType({
     name: 'Book',
     fields: ( ) => ({
@@ -63,7 +63,7 @@ const RootQuery = new GraphQLObjectType({
             type: BookType,
             args: { id: { type: GraphQLID } },
             resolve(parent, args){
-                // code to get data from db / other source
+                // code to get data from db(source/sauce)
                 return _.find(books, { id: args.id });
             }
         },
